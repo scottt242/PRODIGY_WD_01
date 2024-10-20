@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+* {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+         :root {
+            --main-color: #2196f3;
+            --main-color-alt: #1787e0;
+            --main-transition: 0.3s;
+            --main-padding-top: 100px;
+            --main-padding-bottom: 100px;
+            --section-background: #ececec;
+            --rred: red;
+            --ggreen: green;
+            --bblue:#3498db;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Cairo", sans-serif;
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bar>ul:first-child {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .container {
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Small */
+
+        @media (min-width: 768px) {
+            .container {
+                width: 750px;
+            }
+        }
+        /* Medium */
+
+        @media (min-width: 992px) {
+            .container {
+                width: 970px;
+            }
+        }
+        /* Large */
+
+        @media (min-width: 1200px) {
+            .container {
+                width: 1170px;
+            }
+        }
+
+        header {
+            box-shadow: 0 0 11px #ccc;
+            position: sticky;
+            top: 0;
+            background-color: white;
+            z-index: 100;
+        }
+
+        header .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        header .logo h2 {
+            color: var(--main-color);
+        }
+
+        header .bar ul li {
+            display: inline-block;
+        }
+
+        header .bar ul>li>a {
+            font-size: large;
+            text-decoration: none;
+            color: #333;
+            padding: 15px 30px 20px;
+            position: relative;
+            overflow: hidden;
+            transition: .3s;
+        }
+
+        header .bar ul>li>a:hover {
+            background-color: var(--section-background);
+        }
+
+        header .bar>ul>li>a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 3px;
+            left: 0;
+            background-color: var(--bblue);
+            transition: var(--main-transition);
+        }
+
+
+header .bar>ul>li:first-child>a {
+    --bblue: #2196f3; /* Define --bblue explicitly */
+}
+
+header .bar>ul>li:nth-child(2)>a {
+    --bblue: red; /* Define --bblue explicitly */
+}
+
+header .bar>ul>li:nth-child(3)>a {
+    --bblue: greenyellow; /* Define --bblue explicitly */
+}
+
+header .bar>ul>li:last-child>a {
+    --bblue: grey; /* Define --bblue explicitly */
+}
+        header .bar>ul>li>a:hover::before {
+            width: 100%;
+        }
+        @media(max-width:656px) {
+            header .logo {
+                width: 100%;
+                text-align: center;
+            }
+            header .bar {
+                margin: auto auto 5px;
+            }
+        }
+
+        @media(max-width:566px) {
+            header .bar {
+                margin: auto auto 5px;
+            }
+            header .bar ul>li>a {
+                font-size: medium;
+                padding: 7px 15px;
+            }
+        }
+
+        @media (max-width:412px) {
+            header .bar {
+                margin: auto auto 5px;
+            }
+            header .bar ul>li>a {
+                font-size: medium;
+                padding: 7px 10px;
+            }
+        }
+        .landing .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            min-height: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+.landing .text{
+    text-align: center;
+width: 50%;
+}
+        .landing p {
+            font-size: 21px;
+        }
+
+        .landing {
+            position: relative;
+            overflow: hidden;
+            min-height: calc(100vh - 67px);
+        }
+
+        .landing .container::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: -72px;
+            right: 0;
+            background-color: var(--section-background);
+            transform: skewY(5deg);
+            z-index: -100;
+        }
+
+        .landing .image {
+            position: relative;
+            animation-name: landing-image;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: linear;
+        }
+    </style>
+    <title>Task_01</title>
+</head>
+<body>
+     <header>
+        <div class="container">
+            <div class="logo">
+                <h2>TASK01</h2>
+            </div>
+            <div class="bar">
+                <ul>
+                    <li><a href="#articles">blue</a></li>
+                    <li><a href="#gallery">Red</a></li>
+                    <li><a href="#features">Green</a></li>
+                    <li><a href="#other">Grey</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="landing">
+        <div class="container">
+            <div class="text">
+                <h1>Welcome, To my first TASK</h1>
+                <p>Here Iam gonna share everything about my life. Books Iam reading, Games Iam Playing, Stories and Events</p>
+            </div>
+            <div class="image">
+                <img src="landing-image.png" alt="">
+            </div>
+            <div class="buttom">
+                <a href="#articles" class="go-down"><i class="fa-sharp fa-solid fa-rocket"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+let li=document.querySelectorAll(" header .bar>ul>li")
+let landing=document.querySelector(".landing .container ")
+
+li.forEach((e)=>{
+
+    const beforeStyles = getComputedStyle(e.children[0], '::before');
+    let color=beforeStyles.getPropertyValue('--bblue').trim()
+    console.log(color)
+    e.onclick=()=>{
+landing.style.setProperty("--section-background",`${color}`)
+    }
+})
+</script>
+</html>
